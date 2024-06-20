@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  max-width: 1066px;
+  margin-inline: auto;
+}
+
+.our-btn {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: #475AFF;
+  border: 2px solid #475AFF;
+  padding: 14px 40px;
+  border-radius: 40px;
+  font-size: 1.8rem;
+  line-height: 97.3%;
+  transition: all 0.3s ease-out;
+
+  &:first-of-type:hover {
+    background-color: #2e40e2;
+    border: 2px solid #2e40e2;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-radius: 40px;
+    border: 2px solid white;
+
+    &:hover {
+      background-color: #fff;
+      color: #475AFF;
+      border: 2px solid #fff;
+    }
+  }
+}
+
+.utility-mr {
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
