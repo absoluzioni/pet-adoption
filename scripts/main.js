@@ -9,3 +9,17 @@ async function getTemperatureOfMiami() {
 }
 
 getTemperatureOfMiami();
+
+async function petsArea() {
+  const petsPromise = await fetch(
+    "https://learnwebcode.github.io/bootcamp-pet-data/pets.json"
+  );
+  const pets = await petsPromise.json();
+  pets.forEach(pet => {
+    const li = document.createElement("li");
+    li.textContent = `${pet.name} the ${pet.species}`;
+    document.querySelector("#list").appendChild(li);
+  });
+}
+
+petsArea();
