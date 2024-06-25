@@ -38,14 +38,20 @@ function createAgeText(petage) {
   ageText = age < 1 ? `Less than a year old` : ageText;
   return ageText;
 }
-async function petsArea() {
-  const activeButton = document.querySelector(".filter-list .active");
-  console.log(activeButton);
 
+let pets = [];
+
+async function loadPets() {
   const petsPromise = await fetch(
-    "https://learnwebcode.github.io/bootcamp-pet-data/pets.json"
+    "https://petsadoption.netlify.app/.netlify/functions/pets"
   );
-  const pets = await petsPromise.json();
+  pets = await petsPromise.json();
+  petsArea();
+}
+
+function petsArea() {
+  const activeButton = document.querySelector(".filter-list .active");
+
   pets.forEach(pet => {
     const clone = template.content.cloneNode(true);
 
@@ -77,4 +83,5 @@ async function petsArea() {
 
   petsList.appendChild(wrapper);
 }
-petsArea();
+
+loadPets();
